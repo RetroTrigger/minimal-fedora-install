@@ -83,7 +83,7 @@ dnf -y install \
 dnf -y install \
     fontconfig \
     ibm-plex-mono-fonts \
-    google-noto-fonts
+    google-noto-sans-mono-fonts
     
 # Optional Fonts for Asian languages (you'll encounter ugliness in browsers without these)
 dnf -y install \
