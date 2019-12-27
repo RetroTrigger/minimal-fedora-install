@@ -1,14 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
-# Only root can run this script
-[ $UID -eq 0 ] || exit 1
+
 
 # Ensure the system is up to date
-dnf update -y --refresh
+sudo dnf update -y --refresh
 
 # X server and drivers
-dnf -y install \
+sudo dnf -y install \
     glx-utils \
     mesa-dri-drivers \
     mesa-vulkan-drivers \
@@ -37,7 +36,7 @@ dnf -y install \
 #    linux-firmware
 
 # Desktop
-dnf -y install \
+sudo dnf -y install \
     bspwm \
     sxhkd \
     dmenu \
@@ -55,7 +54,7 @@ cp -v /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
 
 
 # System tools
-dnf -y install \
+sudo dnf -y install \
     udiskie \
     upower \
     xdg-utils \
@@ -63,6 +62,8 @@ dnf -y install \
     xsensors \
     dbus-x11 \
     kitty \
+    st \
+    rxvt-unicode \
     NetworkManager-tui \
     NetworkManager-wifi \
     net-tools \
@@ -80,13 +81,13 @@ dnf -y install \
     ranger
 
 # Fonts
-dnf -y install \
+sudo dnf -y install \
     fontconfig \
     ibm-plex-mono-fonts \
     google-noto-sans-mono-fonts
     
 # Optional Fonts for Asian languages (you'll encounter ugliness in browsers without these)
-dnf -y install \
+sudo dnf -y install \
     adobe-source-han-sans-cn-fonts \
     adobe-source-han-serif-cn-fonts \
     google-noto-sans-thai-fonts \
@@ -94,7 +95,7 @@ dnf -y install \
     un-core-batang-fonts
 
 # Codecs
-dnf -y install \
+sudo dnf -y install \
     gstreamer1 \
     gstreamer1-plugins-bad-free \
     gstreamer1-plugins-bad-free-gtk \
@@ -102,7 +103,7 @@ dnf -y install \
     gstreamer1-plugins-good
 
 # Sound
-dnf -y install \
+sudo sudo dnf -y install \
     pulseaudio \
     pulseaudio-libs \
     pulseaudio-utils \
@@ -112,8 +113,8 @@ dnf -y install \
     volumeicon
 
 # Set graphical target and enable lightdm at boot
-systemctl enable lightdm.service
-systemctl set-default graphical.target
+sudo systemctl enable lightdm.service
+sudo systemctl set-default graphical.target
 
 # Set RPM FUSION
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
