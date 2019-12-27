@@ -32,27 +32,27 @@ dnf -y install \
     xkill
 
 # Wireless drivers (the 7260 package contains firmwares for many other Intel cards too)
-dnf -y install \
-    iwl7260-firmware \
-    linux-firmware
+#dnf -y install \
+#    iwl7260-firmware \
+#    linux-firmware
 
 # Desktop
 dnf -y install \
-    adwaita-gtk2-theme \
-    adwaita-icon-theme \
-    i3 \
-    i3lock \
+    bspwm \
+    sxhkd \
     dmenu \
-    xautolock \
-    x11-ssh-askpass \
     lightdm \
     lightdm-gtk \
-    dzen2 \
-    libappindicator \
-    notification-daemon \
-    xfce4-screenshooter \
     firefox \
     feh
+    
+# Configurin BSPWM and SXHKD
+sudo bash -c 'echo XDG_CONFIG_HOME="$HOME/.config" >> /etc/profile'
+sudo bash -c 'echo export XDG_CONFIG_HOME >> /etc/profile'
+mkdir -vp ~/.config/bspwm ~/.config/sxhkd
+cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+cp -v /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
+
 
 # System tools
 dnf -y install \
@@ -62,36 +62,29 @@ dnf -y install \
     lm_sensors \
     xsensors \
     dbus-x11 \
-    gnome-terminal \
-    gnome-logs \
-    bash-completion \
-    gnome-disk-utility \
+    kitty \
     NetworkManager-tui \
     NetworkManager-wifi \
     net-tools \
     bind-utils \
-    blivet-gui \
     git \
     tmux \
     vim \
     whois \
+    flameshot \
     traceroute \
     unzip \
-    eog \
     tree \
     htop \
-    fzf
+    fzf \
+    ranger
 
 # Fonts
 dnf -y install \
     fontconfig \
-    dejavu-sans-fonts \
-    dejavu-sans-mono-fonts \
-    dejavu-serif-fonts \
-    liberation-mono-fonts \
-    liberation-sans-fonts \
-    liberation-serif-fonts
-
+    ibm-plex-mono-fonts \
+    google-noto-fonts
+    
 # Optional Fonts for Asian languages (you'll encounter ugliness in browsers without these)
 dnf -y install \
     adobe-source-han-sans-cn-fonts \
@@ -121,6 +114,9 @@ dnf -y install \
 # Set graphical target and enable lightdm at boot
 systemctl enable lightdm.service
 systemctl set-default graphical.target
+
+# Set RPM FUSION
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Boot into the new environment
 sync
