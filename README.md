@@ -1,6 +1,6 @@
-# Minimal Fedora i3 Desktop
+# Minimal Fedora BSPWM Desktop
 
-Bootstrap a minimal i3 Linux desktop using Fedora on a modern laptop with Intel hardware (CPU/GPU/Wireless)
+Bootstrap a minimal BSPWM Linux desktop using Fedora on a modern laptop with Intel hardware (CPU/GPU/Wireless)
 
 ### Usage
 
