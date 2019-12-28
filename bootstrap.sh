@@ -39,7 +39,7 @@ sudo dnf -y install \
     bspwm \
     sxhkd \
     dmenu \
-    lightdm \
+    sddm \
     lightdm-gtk \
     firefox \
     feh
@@ -110,7 +110,7 @@ sudo sudo dnf -y install \
     volumeicon
 
 # Set graphical target and enable lightdm at boot
-sudo systemctl enable lightdm.service
+sudo systemctl enable sddm.service
 sudo systemctl set-default graphical.target
 
 # Set RPM FUSION
