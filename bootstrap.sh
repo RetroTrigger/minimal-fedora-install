@@ -49,6 +49,7 @@ mkdir -vp ~/.config/bspwm ~/.config/sxhkd
 cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
 cp -v /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
 
+cat ./xin > ~/.xinitrc
 
 # System tools
 sudo dnf -y install \
