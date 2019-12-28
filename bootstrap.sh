@@ -14,7 +14,6 @@ sudo dnf -y install \
     plymouth-system-theme \
     xorg-x11-drv-evdev \
     xorg-x11-drv-fbdev \
-    xorg-x11-drv-intel \
     xorg-x11-drv-libinput \
     xorg-x11-drv-vesa \
     xorg-x11-server-Xorg \
@@ -46,8 +45,6 @@ sudo dnf -y install \
     feh
     
 # Configurin BSPWM and SXHKD
-sudo bash -c 'echo XDG_CONFIG_HOME="$HOME/.config" >> /etc/profile'
-sudo bash -c 'echo export XDG_CONFIG_HOME >> /etc/profile'
 mkdir -vp ~/.config/bspwm ~/.config/sxhkd
 cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
 cp -v /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
@@ -63,7 +60,6 @@ sudo dnf -y install \
     dbus-x11 \
     kitty \
     st \
-    rxvt-unicode \
     NetworkManager-tui \
     NetworkManager-wifi \
     net-tools \
