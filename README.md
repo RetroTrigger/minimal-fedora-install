@@ -4,7 +4,7 @@ Bootstrap a minimal BSPWM Linux desktop using Fedora on a modern laptop with Int
 
 ### Usage
 
-0. Using the `netinstall` ISO do a `Minimal Install` of the OS (I suggest enabling `LUKS + LVM` and creating separate partitions for `/boot`, `/`, `/home`, `/var` and `swap`)
+0. Using the `netinstall` ISO do a `Minimal Install` of the OS
 1. Run `bootstrap.sh` as root (machine will reboot at the end)
 
 You should now have a functional desktop
