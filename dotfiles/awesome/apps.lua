@@ -27,10 +27,10 @@ apps.default = {
     terminal = "kitty --single-instance",
     launcher = "rofi -modi drun -show drun",
     lock = "xsecurelock",
-    screenshot = "gnome-screenshot",
-    filebrowser = "pcmanfm",
-    browser = "firefox",
-    editor = "micro"
+    screenshot = "flameshot",
+    filebrowser = "nautilus",
+    browser = "brave",
+    editor = "codium"
 }
 
 -- List of apps to start once on start-up

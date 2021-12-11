@@ -156,7 +156,7 @@ keys.globalkeys = gears.table.join(
         end,
         {description = "application launcher", group = "launcher"}
     ),
-    --launch firefox
+    --launch Brave
     awful.key({ modkey }, "b",
         function ()
             awful.spawn(apps.browser)
