@@ -105,7 +105,7 @@ sudo dnf -y install \
     gstreamer1-plugins-good
 
 # Sound
-sudo sudo dnf -y install \
+sudo dnf -y install \
     pulseaudio \
     pulseaudio-libs \
     pulseaudio-utils \
@@ -113,6 +113,15 @@ sudo sudo dnf -y install \
     alsa-utils \
     pavucontrol \
     volumeicon
+
+# Install Brave Browser
+sudo dnf -y install dnf-plugins-core
+
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+
+sudo dnf -y install brave-browser
 
 # Set graphical target and enable lightdm at boot
 sudo systemctl enable sddm.service
