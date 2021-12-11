@@ -1,6 +1,6 @@
-# Minimal Fedora BSPWM Desktop
+# Minimal Fedora AwesomeWM Desktop
 
-Bootstrap a minimal BSPWM Linux desktop using Fedora on a modern laptop with Intel hardware (CPU/GPU/Wireless)
+Bootstrap a minimal AwesomeWM Linux desktop using Fedora
 
 ### Usage
 
