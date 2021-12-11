@@ -2,12 +2,16 @@
 set -euo pipefail
 
 
+# Enable RPM Repo
+sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
+sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Ensure the system is up to date
 sudo dnf update -y --refresh
 
 # X server and drivers
 sudo dnf -y install \
+    akmod-nvidia \
     glx-utils \
     mesa-dri-drivers \
     mesa-vulkan-drivers \
@@ -36,63 +40,64 @@ sudo dnf -y install \
 
 # Desktop
 sudo dnf -y install \
-    bspwm \
-    sxhkd \
-    dmenu \
+    awesome \
+    rofi \
     sddm \
-    lightdm-gtk \
-    firefox \
+    ImageMagick \
     feh
     
-# Configurin BSPWM and SXHKD
-mkdir -vp ~/.config/bspwm ~/.config/sxhkd
-cp -v /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
-cp -v /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
-
-cat ./xin > ~/.xinitrc
-
 # System tools
 sudo dnf -y install \
+    xfce4-power-manager \
+    nautilus \
+    bluez \
+    blueman \
+    lxappearance \
     udiskie \
-    upower \
     xdg-utils \
     lm_sensors \
     xsensors \
     dbus-x11 \
     kitty \
-    st \
     NetworkManager-tui \
     NetworkManager-wifi \
     net-tools \
     bind-utils \
     git \
-    tmux \
-    vim \
-    whois \
     flameshot \
     traceroute \
     unzip \
     tree \
     htop \
-    fzf \
-    ranger
+    neofetch \
+    fish \
+    fzf 
+
+# Make Theme folders
+mkdir -p ~/.themes ~/.fonts
+
+# Themes
+sudo dnf -y install \
+    juno-gnome-theme \
 
 # Fonts
 sudo dnf -y install \
     fontconfig \
     ibm-plex-mono-fonts \
     google-noto-sans-mono-fonts
-    
-# Optional Fonts for Asian languages (you'll encounter ugliness in browsers without these)
-sudo dnf -y install \
-    adobe-source-han-sans-cn-fonts \
-    adobe-source-han-serif-cn-fonts \
-    google-noto-sans-thai-fonts \
-    google-noto-serif-thai-fonts \
-    un-core-batang-fonts
+
+sudo git clone https://github.com/perrychan1/fonts.git ~/.fonts/*    
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+unzip FiraCode.zip -d ~/.fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+unzip Meslo.zip -d ~/.fonts   
+fc-cache -vf
 
 # Codecs
 sudo dnf -y install \
+    mpv \
+    celluloid \
     gstreamer1 \
     gstreamer1-plugins-bad-free \
     gstreamer1-plugins-bad-free-gtk \
@@ -113,8 +118,18 @@ sudo sudo dnf -y install \
 sudo systemctl enable sddm.service
 sudo systemctl set-default graphical.target
 
-# Set RPM FUSION
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# Change shell to fish
+sudo dnf -y install util-linux-user
+chsh -s /usr/bin/fish
+
+# Fish Powerline Prompt
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install IlanCosman/tide@v5
+
+# Copy Config Files
+git clone https://github.com/RetroTrigger/minimal-fedora-install.git ~
+cp -R ~/minimal-fedora-install/dotfiles/* ~/.config/
+rm -rf ~/minimal-fedora-install
 
 # Boot into the new environment
 sync
