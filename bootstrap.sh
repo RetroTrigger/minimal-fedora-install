@@ -82,12 +82,12 @@ sudo dnf -y install \
     ibm-plex-mono-fonts \
     google-noto-sans-mono-fonts
 
-sudo git clone https://github.com/perrychan1/fonts.git ~/.fonts/*    
+sudo git clone https://github.com/perrychan1/fonts.git ~/etc/fonts/  
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-unzip FiraCode.zip -d ~/.fonts
+unzip FiraCode.zip -d ~/etc/fonts/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-unzip Meslo.zip -d ~/.fonts   
+unzip Meslo.zip -d ~/etc/fonts/   
 fc-cache -vf
 
 # Codecs
