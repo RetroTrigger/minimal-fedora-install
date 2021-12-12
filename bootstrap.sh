@@ -136,7 +136,6 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v5
 
 # Copy Config Files
-git clone https://github.com/RetroTrigger/minimal-fedora-install.git ~
 cp -R ~/minimal-fedora-install/dotfiles/* ~/.config/
 
 # Boot into the new environment
