@@ -10,21 +10,13 @@ sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-non
 sudo dnf update -y --refresh
 
 # X server and drivers
+sudo dnf -y groupinstall "X Window system"
 sudo dnf -y install \
     akmod-nvidia \
     glx-utils \
     mesa-dri-drivers \
     mesa-vulkan-drivers \
     plymouth-system-theme \
-    xorg-x11-drv-evdev \
-    xorg-x11-drv-fbdev \
-    xorg-x11-drv-libinput \
-    xorg-x11-drv-vesa \
-    xorg-x11-server \
-    xorg-x11-server-utils \
-    xorg-x11-utils \
-    xorg-x11-xauth \
-    xorg-x11-xinit \
     xbacklight \
     picom \
     xrandr \
