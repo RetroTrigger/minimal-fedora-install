@@ -28,18 +28,18 @@ theme.font          = "SF Pro Text 10.2"
 theme.title_font    = "SF Pro Display Medium 11"
 
 -- Background
-theme.bg_normal     = "#283039"
-theme.bg_dark       = "#000000"
-theme.bg_focus      = "#111111"
-theme.bg_urgent     = "#ed8274"
-theme.bg_minimize   = "#444444"
+theme.bg_normal     = "#283039" --grey
+theme.bg_dark       = "#000000" --black
+theme.bg_focus      = "#111111" --black also
+theme.bg_urgent     = "#ed8274" --light pinky red
+theme.bg_minimize   = "#444444" --dark grey
 theme.bg_systray    = theme.bg_normal
 
 -- Foreground
-theme.fg_normal     = "#ffffff"
-theme.fg_focus      = "#e4e4e4"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal     = "#ffffff" --white
+theme.fg_focus      = "#e4e4e4" --light grey
+theme.fg_urgent     = "#ffffff" --white
+theme.fg_minimize   = "#ffffff" --white
 
 -- Sizing
 theme.useless_gap         = dpi(6)            -- window gap distance
@@ -48,7 +48,7 @@ theme.gap_single_client   = false             -- gaps if only one window is open
 -- Window Borders
 theme.border_width          = dpi(2)            -- window border width
 theme.border_normal         = theme.bg_normal
-theme.border_focus          = "#d7cfc6"
+theme.border_focus          = "#d7cfc6"         --light shade of brown
 theme.border_marked         = theme.fg_urgent
 
 -- Titlebars
