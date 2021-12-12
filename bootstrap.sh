@@ -14,7 +14,9 @@ sudo dnf -y install \
     xorg-x11-server-Xorg \
     xorg-x11-xinit \
     xorg-x11-drv-libinput \
+    xorg-x11-font-utils \
     akmod-nvidia \
+    cabextract \
     glx-utils \
     mesa-dri-drivers \
     mesa-vulkan-drivers \
