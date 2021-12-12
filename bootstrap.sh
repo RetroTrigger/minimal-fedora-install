@@ -138,7 +138,6 @@ fisher install IlanCosman/tide@v5
 # Copy Config Files
 git clone https://github.com/RetroTrigger/minimal-fedora-install.git ~
 cp -R ~/minimal-fedora-install/dotfiles/* ~/.config/
-rm -rf ~/minimal-fedora-install
 
 # Boot into the new environment
 sync
