@@ -123,7 +123,7 @@ sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 sudo dnf -y install brave-browser
 
-# Set graphical target and enable lightdm at boot
+# Set graphical target and enable sddm at boot
 sudo systemctl enable sddm.service
 sudo systemctl set-default graphical.target
 
