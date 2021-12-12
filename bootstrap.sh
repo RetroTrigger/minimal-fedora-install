@@ -71,8 +71,8 @@ sudo dnf -y install \
 mkdir -p ~/.themes ~/.fonts
 
 # Themes
-sudo dnf -y install \
-    juno-gnome-theme \
+#sudo dnf -y install \
+#   juno-gnome-theme \
 
 # Fonts
 sudo dnf -y install \
