@@ -25,6 +25,7 @@ sudo dnf -y install \
     picom \
     xrandr \
     arandr \
+    wget \
     xsel \
     xclip \
     xkill
