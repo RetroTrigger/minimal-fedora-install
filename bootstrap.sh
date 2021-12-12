@@ -20,7 +20,7 @@ sudo dnf -y install \
     xorg-x11-drv-fbdev \
     xorg-x11-drv-libinput \
     xorg-x11-drv-vesa \
-    xorg-x11-server-Xorg \
+    xorg-x11-server \
     xorg-x11-server-utils \
     xorg-x11-utils \
     xorg-x11-xauth \
