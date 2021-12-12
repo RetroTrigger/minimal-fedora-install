@@ -25,7 +25,6 @@ sudo dnf -y install \
     picom \
     xrandr \
     arandr \
-    wget \
     xsel \
     xclip \
     xkill
@@ -68,6 +67,7 @@ sudo dnf -y install \
     htop \
     neofetch \
     fish \
+    wget \
     fzf 
 
 # Make Theme folders
