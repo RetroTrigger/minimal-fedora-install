@@ -72,26 +72,16 @@ sudo dnf -y install \
     neofetch \
     fish \
     fzf 
-
-# Make Theme folders
-mkdir -p ~/.themes ~/.fonts
-
 # Themes
-sudo dnf -y install \
-    juno-gnome-theme \
+mv -f ~/minimal-fedora-install/themes ~/.themes
+mv -f ~/minimal-fedora-install/icons ~/.icons
 
 # Fonts
 sudo dnf -y install \
     fontconfig \
     ibm-plex-mono-fonts \
     google-noto-sans-mono-fonts
-
-sudo git clone https://github.com/perrychan1/fonts.git ~/.fonts/*    
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-unzip FiraCode.zip -d ~/.fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-unzip Meslo.zip -d ~/.fonts   
+mv -f ~/minimal-fedora-install/fonts ~/.fonts
 fc-cache -vf
 
 # Codecs
