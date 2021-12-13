@@ -71,6 +71,7 @@ sudo dnf -y install \
     htop \
     neofetch \
     fish \
+    wget \
     fzf 
 # Themes
 mv -f ~/minimal-fedora-install/themes ~/.themes
