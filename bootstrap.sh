@@ -11,20 +11,8 @@ sudo dnf update -y --refresh
 
 # X server and drivers
 sudo dnf -y install \
+    @base-x \
     akmod-nvidia \
-    glx-utils \
-    mesa-dri-drivers \
-    mesa-vulkan-drivers \
-    plymouth-system-theme \
-    xorg-x11-drv-evdev \
-    xorg-x11-drv-fbdev \
-    xorg-x11-drv-libinput \
-    xorg-x11-drv-vesa \
-    xorg-x11-server-Xorg \
-    xorg-x11-server-utils \
-    xorg-x11-utils \
-    xorg-x11-xauth \
-    xorg-x11-xinit \
     xbacklight \
     picom \
     xrandr \
@@ -50,6 +38,8 @@ sudo dnf -y install \
 sudo dnf -y install \
     xfce4-power-manager \
     nautilus \
+    file-roller \
+    nitrogen \
     bluez \
     blueman \
     lxappearance \
