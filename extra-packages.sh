@@ -28,6 +28,7 @@ sudo dnf install \
     rsync \
     steam \
     filezilla \
+    winehq-staging \
     lutris \
     tar \
     bridge-utils \
