@@ -20,17 +20,6 @@ sudo dnf -y install \
     xclip \
     xkill
 
--------------------------------------------------------------------------
-                    Installing Graphics Drivers
--------------------------------------------------------------------------
-
-# Graphics Drivers find and install
-gpu_type=$(lspci)
-if grep -E "NVIDIA|GeForce" <<< ${gpu_type}; then
-    sudo dnf -y install akmod-nvidia
-fi
-
-
 # Wireless drivers (the 7260 package contains firmwares for many other Intel cards too)
 #dnf -y install \
 #    iwl7260-firmware \
@@ -74,7 +63,7 @@ sudo dnf -y install \
     wget \
     curl \
     fzf 
-    
+
 # Themes
 mv -f ~/minimal-fedora-install/themes ~/.themes
 mv -f ~/minimal-fedora-install/icons ~/.icons
@@ -122,7 +111,7 @@ sudo systemctl set-default graphical.target
 
 # Change shell to fish
 sudo dnf -y install util-linux-user
-chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish
 
 # Fish Powerline Prompt
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher

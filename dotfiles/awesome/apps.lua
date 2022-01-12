@@ -29,13 +29,13 @@ apps.default = {
     lock = "xsecurelock",
     screenshot = "flameshot",
     filebrowser = "nautilus",
-    browser = "brave",
+    browser = "brave-browser",
     editor = "codium"
 }
 
 -- List of apps to start once on start-up
 local run_on_start_up = {
-    "picom",
+    "picom -b --config  $HOME/.config/picom.conf",
     "redshift",
     "unclutter"
 }
