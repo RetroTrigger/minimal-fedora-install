@@ -1,5 +1,7 @@
 #!/bin/bash
 set -xe
+#Add Repository
+    sudo dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/35/winehq.repo
 
 sudo dnf install \
     make \

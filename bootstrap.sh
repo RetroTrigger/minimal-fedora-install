@@ -12,7 +12,6 @@ sudo dnf update -y --refresh
 # X server and drivers
 sudo dnf -y install \
     @base-x \
-    akmod-nvidia \
     xbacklight \
     picom \
     xrandr \
@@ -20,6 +19,17 @@ sudo dnf -y install \
     xsel \
     xclip \
     xkill
+
+-------------------------------------------------------------------------
+                    Installing Graphics Drivers
+-------------------------------------------------------------------------
+
+# Graphics Drivers find and install
+gpu_type=$(lspci)
+if grep -E "NVIDIA|GeForce" <<< ${gpu_type}; then
+    sudo dnf -y install akmod-nvidia
+fi
+
 
 # Wireless drivers (the 7260 package contains firmwares for many other Intel cards too)
 #dnf -y install \
@@ -62,7 +72,9 @@ sudo dnf -y install \
     neofetch \
     fish \
     wget \
+    curl \
     fzf 
+    
 # Themes
 mv -f ~/minimal-fedora-install/themes ~/.themes
 mv -f ~/minimal-fedora-install/icons ~/.icons
@@ -117,6 +129,7 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v5
 
 # Copy Config Files
+mkdir ~/.config
 cp -R ~/minimal-fedora-install/dotfiles/* ~/.config/
 
 # Boot into the new environment
