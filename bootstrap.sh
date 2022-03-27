@@ -6,6 +6,10 @@ set -euo pipefail
 sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
 sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+# Speed up DNF
+echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf
+echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf
+
 # Ensure the system is up to date
 sudo dnf update -y --refresh
 
@@ -63,6 +67,9 @@ sudo dnf -y install \
     wget \
     curl \
     fzf 
+    
+#Install Preload
+sudo dnf copr enable elxreno/preload -y && sudo dnf install preload -y
 
 # Themes
 mv -f ~/minimal-fedora-install/themes ~/.themes
