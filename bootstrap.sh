@@ -66,6 +66,7 @@ sudo dnf -y install \
     fish \
     wget \
     curl \
+    zsh \
     fzf 
     
 #Install Preload
@@ -95,12 +96,12 @@ sudo dnf -y install \
 
 # Sound
 sudo dnf -y install \
-    pulseaudio \
-    pulseaudio-libs \
-    pulseaudio-utils \
-    alsa-plugins-pulseaudio \
-    alsa-utils \
-    pavucontrol \
+#    pulseaudio \
+#    pulseaudio-libs \
+#    pulseaudio-utils \
+#    alsa-plugins-pulseaudio \
+#    alsa-utils \
+#    pavucontrol \
     volumeicon
 
 # Install Brave Browser
@@ -115,14 +116,6 @@ sudo dnf -y install brave-browser
 # Set graphical target and enable sddm at boot
 sudo systemctl enable sddm.service
 sudo systemctl set-default graphical.target
-
-# Change shell to fish
-sudo dnf -y install util-linux-user
-sudo chsh -s /usr/bin/fish
-
-# Fish Powerline Prompt
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-fisher install IlanCosman/tide@v5
 
 # Copy Config Files
 mkdir ~/.config
