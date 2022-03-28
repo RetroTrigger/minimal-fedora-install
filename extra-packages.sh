@@ -42,6 +42,7 @@ sudo dnf install \
     libguestfs-tools \
     virt-manager \
     wget 
+    
 
 # Install Github Desktop
     sudo rpm --import https://packagecloud.io/shiftkey/desktop/gpgkey
@@ -64,3 +65,8 @@ sudo dnf install \
     
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+
