@@ -61,3 +61,6 @@ sudo dnf install \
     sudo systemctl start libvirtd
 # Then enable the service to start on boot
     sudo systemctl enable libvirtd
+    
+# Install Oh-My-Zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
